@@ -38,9 +38,12 @@ public:
 	}
 
 	void resetDice() {
-		random_device rd;
-		mt19937 g(rd());
-		shuffle(dice.begin(), dice.end(), g);
+		random_shuffle(dice.begin(), dice.end());
+
+		// a better random: c++ docs
+		//random_device rd;
+		//mt19937 g(rd()); 
+		//shuffle(dice.begin(), dice.end(), g);
 	}
 
 	string getResult() {
